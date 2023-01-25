@@ -1,0 +1,61 @@
+
+begin parameters
+   kp12 0.1
+   km12 0.024
+   kp13 0.1
+   km13 0.024
+   kp14 0.1
+   km14 0.024
+   kp23 0.1
+   km23 0.024
+   kp24 0.1
+   km24 0.024
+   kp34 0.1
+   km34 0.024
+end parameters
+
+begin molecule types
+  c61(s)
+  c62(s)
+  c63(s)
+  c64(s)
+end molecule types
+
+begin species
+  c61(s)  1
+  c62(s)  1
+  c63(s)  1
+  c64(s)  1  
+end species
+
+begin observables
+   Molecules    c61_62          c61(s!1).c62(s!1)
+   Molecules    c61_63          c61(s!1).c63(s!1)   
+   Molecules    c61_64          c61(s!1).c64(s!1)   
+   Molecules    c62_63          c62(s!1).c63(s!1)
+   Molecules    c62_64          c62(s!1).c64(s!1)
+   Molecules    c63_64          c63(s!1).c64(s!1) 
+end observables
+
+
+begin functions
+end functions
+
+begin reaction rules
+   c61(s) + c62(s) <-> c61(s!1).c62(s!1)   kp12,km12
+   c61(s) + c63(s) <-> c61(s!1).c63(s!1)   kp13,km13
+   c61(s) + c64(s) <-> c61(s!1).c64(s!1)   kp14,km14
+   c62(s) + c63(s) <-> c62(s!1).c63(s!1)   kp23,km23
+   c62(s) + c64(s) <-> c62(s!1).c64(s!1)   kp24,km24
+   c63(s) + c64(s) <-> c63(s!1).c64(s!1)   kp34,km34
+end reaction rules
+
+ 
+simulate_nf({suffix=>nf,t_end=>100,n_steps=>100,param=>"-v -utl 3",get_final_state=>1});
+
+
+#promoter - enhancer interactions - major part chea-pet, more information 
+#how many interactions can we expect? One site, two sites, …
+#exclusive/inclusive interactions, bias for distances 
+#rule-based initially to exclude scenarios, 
+#internal deadline

@@ -1,0 +1,52 @@
+begin model
+
+begin parameters
+K_off		1.0
+K_on		5.0
+end parameters
+
+begin molecule types
+Nephrin(y1176,y1193,y1217)
+Nck(SH2,s3,s2,s1,coop~NW_b~NW_ub)
+NWASP(PRM1,PRM2,PRM3,PRM4,PRM5)
+end molecule types
+
+begin seed species
+Nck(SH2,s3,s2,s1,coop~NW_ub)		20.0
+NWASP(PRM1,PRM2,PRM3,PRM4,PRM5)		11.0
+Nephrin(y1176,y1193,y1217)		8.0
+end seed species
+
+begin observables
+Species		Neph_mem		Nephrin()	
+Species		Neph2_mem		Nephrin(y1176!+).Nephrin(y1176!+)	
+Species		Neph3_mem		Nephrin().Nephrin().Nephrin()	
+Species		Neph4_mem		Nephrin(y1176!1,y1193,y1217).Nephrin(y1176!2,y1193,y1217).Nephrin(y1176!3,y1193,y1217).Nephrin(y1176!+,y1193,y1217).Nck(SH2!1,s3!+).Nck(SH2!2,s3!+).Nck(SH2!3,s3!+).NWASP(PRM1!+,PRM2!+,PRM3!+,PRM4,PRM5)	
+Species		Neph_cyt		Nephrin()	
+Species		Neph3_mem_defimned		Nephrin(y1176!+).Nephrin(y1176!+).Nephrin(y1176!+)	
+end observables
+
+begin functions
+end functions
+
+begin reaction rules
+Neph_Nck_cyt_1:	Nephrin(y1176) + Nck(SH2) <-> Nephrin(y1176!1).Nck(SH2!1)		100.0, 10.0
+s3_mem_PRM1_cyt:	Nck(s3,coop~NW_ub!?) + NWASP(PRM1) <-> Nck(s3!1,coop~NW_b!?).NWASP(PRM1!1)		10.0 * K_on, K_off
+s3_mem_PRM2_cyt:	Nck(s3,coop~NW_ub!?) + NWASP(PRM2) <-> Nck(s3!1,coop~NW_b!?).NWASP(PRM2!1)		10.0 * K_on, K_off
+Neph_Nck_mem_1:	Nephrin(y1176) + Nck(SH2) <-> Nephrin(y1176!1).Nck(SH2!1)		100.0, 10.0
+s3_mem_PRM1_mem:	Nck(s3,coop~NW_ub!?) + NWASP(PRM1) <-> Nck(s3!1,coop~NW_b!?).NWASP(PRM1!1)		10.0 * K_on, K_off
+s3_mem_PRM2_mem:	Nck(s3,coop~NW_ub!?) + NWASP(PRM2) <-> Nck(s3!1,coop~NW_b!?).NWASP(PRM2!1)		10.0 * K_on, K_off
+s3_PRM1_cyt_mem:	Nck(s3,coop~NW_ub!?) + NWASP(PRM1) <-> Nck(s3!1,coop~NW_b!?).NWASP(PRM1!1)		10.0 * K_on, K_off
+s3_PRM1_cyt_cyt:	Nck(s3,coop~NW_ub!?) + NWASP(PRM1) <-> Nck(s3!1,coop~NW_b!?).NWASP(PRM1!1)		10.0 * K_on, K_off
+s3_cyt_PRM2_mem:	Nck(s3,coop~NW_ub!?) + NWASP(PRM2) <-> Nck(s3!1,coop~NW_b!?).NWASP(PRM2!1)		10.0 * K_on, K_off
+s3_PRM2_cyt_cyt:	Nck(s3,coop~NW_ub!?) + NWASP(PRM2) <-> Nck(s3!1,coop~NW_b!?).NWASP(PRM2!1)		10.0 * K_on, K_off
+s3_mem_PRM3_mem:	Nck(s3,coop~NW_ub!?) + NWASP(PRM3) <-> Nck(s3!1,coop~NW_b!?).NWASP(PRM3!1)		10.0 * K_on, K_off
+s3_mem_PRM3_cyt:	Nck(s3,coop~NW_ub!?) + NWASP(PRM3) <-> Nck(s3!1,coop~NW_b!?).NWASP(PRM3!1)		10.0 * K_on, K_off
+s3_cyt_PRM3_mem:	Nck(s3,coop~NW_ub!?) + NWASP(PRM3) <-> Nck(s3!1,coop~NW_b!?).NWASP(PRM3!1)		10.0 * K_on, K_off
+s3_cyt_PRM3_cyt:	Nck(s3,coop~NW_ub!?) + NWASP(PRM3) <-> Nck(s3!1,coop~NW_b!?).NWASP(PRM3!1)		10.0 * K_on, K_off
+end reaction rules
+
+end model
+
+simulate_nf({t_end=>1.0,n_steps=>50,,param=>'-v -cb -ss'})
+

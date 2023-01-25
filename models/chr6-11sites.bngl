@@ -1,0 +1,299 @@
+
+begin parameters
+   km12 0.1
+   kp12 0.088
+   km13 0.1
+   kp13 0.084
+   km14 0.1
+   kp14 0.050
+   km15 0.1
+   kp15 0.045
+   km16 0.1
+   kp16 0.047
+   km17 0.1
+   kp17 0.046
+   km18 0.1
+   kp18 0.043
+   km19 0.1
+   kp19 0.047
+   km110 0.1
+   kp110 0.046
+   km111 0.1
+   kp111 0.042
+
+   km23 0.1
+   kp23 0.068
+   km24 0.1
+   kp24 0.071
+   km25 0.1
+   kp25 0.055
+   km26 0.1
+   kp26 0.051
+   km27 0.1
+   kp27 0.048
+   km28 0.1
+   kp28 0.046
+   km29 0.1
+   kp29 0.045
+   km210 0.1
+   kp210 0.044
+   km211 0.1
+   kp211 0.043
+
+   km34 0.1
+   kp34 0.060
+   km35 0.1
+   kp35 0.056
+   km36 0.1
+   kp36 0.057
+   km37 0.1
+   kp37 0.050
+   km38 0.1
+   kp38 0.045
+   km39 0.1
+   kp39 0.048
+   km310 0.1
+   kp310 0.047
+   km311 0.1
+   kp311 0.041
+
+   km45 0.1
+   kp45 0.092
+   km46 0.1
+   kp46 0.063
+   kp47 0.1
+   km47 0.050
+   km48 0.1
+   kp48 0.042
+   km49 0.1
+   kp49 0.037
+   km410 0.1
+   kp410 0.035
+   km411 0.1
+   kp411 0.033
+
+   km56 0.1
+   kp56 0.082
+   km57 0.1
+   kp57 0.074
+   km58 0.1
+   kp58 0.059
+   km59 0.1
+   kp59 0.047
+   km510 0.1
+   kp510 0.041
+   km511 0.1
+   kp511 0.036
+
+   km67 0.1
+   kp67 0.073
+   km68 0.1
+   kp68 0.072
+   km69 0.1
+   kp69 0.060
+   km610 0.1
+   kp610 0.050
+   km611 0.1
+   kp611 0.043
+
+   km78 0.1
+   kp78 0.077
+   km79 0.1
+   kp79 0.074
+   km710 0.1
+   kp710 0.060
+   km711 0.1
+   kp711 0.048
+
+   km89 0.1
+   kp89 0.093
+   km810 0.1
+   kp810 0.080
+   km811 0.1
+   kp811 0.063
+
+   km910 0.1
+   kp910 0.088
+   km911 0.1
+   kp911 0.074
+
+   km1011 0.1
+   kp1011 0.098
+end parameters
+
+begin molecule types
+  c61(s)
+  c62(s)
+  c63(s)
+  c64(s)
+  c65(s)
+  c66(s)
+  c67(s)
+  c68(s)
+  c69(s)
+  c610(s)
+  c611(s)
+end molecule types
+
+begin species
+  c61(s)  1
+  c62(s)  1
+  c63(s)  1
+  c64(s)  1 
+  c65(s)  1
+  c66(s)  1
+  c67(s)  1
+  c68(s)  1
+  c69(s)  1
+  c610(s)  1
+  c611(s)  1 
+end species
+
+begin observables
+   Molecules    c61_62          c61(s!1).c62(s!1)
+   Molecules    c61_63          c61(s!1).c63(s!1)   
+   Molecules    c61_64          c61(s!1).c64(s!1) 
+   Molecules    c61_65          c61(s!1).c65(s!1)
+   Molecules    c61_66          c61(s!1).c66(s!1)   
+   Molecules    c61_67          c61(s!1).c67(s!1)
+   Molecules    c61_68          c61(s!1).c68(s!1) 
+   Molecules    c61_69          c61(s!1).c69(s!1)
+   Molecules    c61_610         c61(s!1).c610(s!1)   
+   Molecules    c61_611         c61(s!1).c611(s!1)
+   
+   Molecules    c62_63          c62(s!1).c63(s!1)
+   Molecules    c62_64          c62(s!1).c64(s!1)
+   Molecules    c62_65          c62(s!1).c65(s!1) 
+   Molecules    c62_66          c62(s!1).c66(s!1)
+   Molecules    c62_67          c62(s!1).c67(s!1)
+   Molecules    c62_68          c62(s!1).c68(s!1) 
+   Molecules    c62_69          c62(s!1).c69(s!1)
+   Molecules    c62_610         c62(s!1).c610(s!1)
+   Molecules    c62_611         c62(s!1).c611(s!1)
+
+   Molecules    c63_64          c63(s!1).c64(s!1)
+   Molecules    c63_65          c63(s!1).c65(s!1) 
+   Molecules    c63_66          c63(s!1).c66(s!1)
+   Molecules    c63_67          c63(s!1).c67(s!1)
+   Molecules    c63_68          c63(s!1).c68(s!1) 
+   Molecules    c63_69          c63(s!1).c69(s!1)
+   Molecules    c63_610         c63(s!1).c610(s!1)
+   Molecules    c63_611         c63(s!1).c611(s!1)
+
+   Molecules    c64_65          c64(s!1).c65(s!1) 
+   Molecules    c64_66          c64(s!1).c66(s!1)
+   Molecules    c64_67          c64(s!1).c67(s!1)
+   Molecules    c64_68          c64(s!1).c68(s!1) 
+   Molecules    c64_69          c64(s!1).c69(s!1)
+   Molecules    c64_610         c64(s!1).c610(s!1)
+   Molecules    c64_611         c64(s!1).c611(s!1)
+
+   Molecules    c65_66          c65(s!1).c66(s!1)
+   Molecules    c65_67          c65(s!1).c67(s!1)
+   Molecules    c65_68          c65(s!1).c68(s!1) 
+   Molecules    c65_69          c65(s!1).c69(s!1)
+   Molecules    c65_610         c65(s!1).c610(s!1)
+   Molecules    c65_611         c65(s!1).c611(s!1)
+
+   Molecules    c66_67          c66(s!1).c67(s!1)
+   Molecules    c66_68          c66(s!1).c68(s!1) 
+   Molecules    c66_69          c66(s!1).c69(s!1)
+   Molecules    c66_610         c66(s!1).c610(s!1)
+   Molecules    c66_611         c66(s!1).c611(s!1)
+
+   Molecules    c67_68          c67(s!1).c68(s!1) 
+   Molecules    c67_69          c67(s!1).c69(s!1)
+   Molecules    c67_610         c67(s!1).c610(s!1)
+   Molecules    c67_611         c67(s!1).c611(s!1)
+
+   Molecules    c68_69          c68(s!1).c69(s!1)
+   Molecules    c68_610         c68(s!1).c610(s!1)
+   Molecules    c68_611         c68(s!1).c611(s!1)
+
+   Molecules    c69_610         c69(s!1).c610(s!1)
+   Molecules    c69_611         c69(s!1).c611(s!1)
+
+   Molecules    c610_611        c610(s!1).c611(s!1)
+
+end observables
+
+
+begin functions
+end functions
+
+begin reaction rules
+   c61(s) + c62(s) <-> c61(s!1).c62(s!1)   kp12,km12
+   c61(s) + c63(s) <-> c61(s!1).c63(s!1)   kp13,km13
+   c61(s) + c64(s) <-> c61(s!1).c64(s!1)   kp14,km14
+   c61(s) + c65(s) <-> c61(s!1).c65(s!1)   kp15,km15
+   c61(s) + c66(s) <-> c61(s!1).c66(s!1)   kp16,km16
+   c61(s) + c67(s) <-> c61(s!1).c67(s!1)   kp17,km17
+   c61(s) + c68(s) <-> c61(s!1).c68(s!1)   kp18,km18
+   c61(s) + c69(s) <-> c61(s!1).c69(s!1)   kp19,km19
+   c61(s) + c610(s) <-> c61(s!1).c610(s!1)   kp110,km110
+   c61(s) + c611(s) <-> c61(s!1).c611(s!1)   kp111,km111
+
+   c62(s) + c63(s) <-> c62(s!1).c63(s!1)   kp23,km23
+   c62(s) + c64(s) <-> c62(s!1).c64(s!1)   kp24,km24
+   c62(s) + c65(s) <-> c62(s!1).c65(s!1)   kp25,km25
+   c62(s) + c66(s) <-> c62(s!1).c66(s!1)   kp26,km26
+   c62(s) + c67(s) <-> c62(s!1).c67(s!1)   kp27,km27
+   c62(s) + c68(s) <-> c62(s!1).c68(s!1)   kp28,km28
+   c62(s) + c69(s) <-> c62(s!1).c69(s!1)   kp29,km29
+   c62(s) + c610(s) <-> c62(s!1).c610(s!1)   kp210,km210
+   c62(s) + c611(s) <-> c62(s!1).c611(s!1)   kp211,km211
+
+   c63(s) + c64(s) <-> c63(s!1).c64(s!1)   kp34,km34
+   c63(s) + c65(s) <-> c63(s!1).c65(s!1)   kp35,km35
+   c63(s) + c66(s) <-> c63(s!1).c66(s!1)   kp36,km36
+   c63(s) + c67(s) <-> c63(s!1).c67(s!1)   kp37,km37
+   c63(s) + c68(s) <-> c63(s!1).c68(s!1)   kp38,km38
+   c63(s) + c69(s) <-> c63(s!1).c69(s!1)   kp39,km39
+   c63(s) + c610(s) <-> c63(s!1).c610(s!1)   kp310,km310
+   c63(s) + c611(s) <-> c63(s!1).c611(s!1)   kp311,km311
+
+   c64(s) + c65(s) <-> c64(s!1).c65(s!1)   kp45,km45
+   c64(s) + c66(s) <-> c64(s!1).c66(s!1)   kp46,km46
+   c64(s) + c67(s) <-> c64(s!1).c67(s!1)   kp47,km47
+   c64(s) + c68(s) <-> c64(s!1).c68(s!1)   kp48,km48
+   c64(s) + c69(s) <-> c64(s!1).c69(s!1)   kp49,km49
+   c64(s) + c610(s) <-> c64(s!1).c610(s!1)   kp410,km410
+   c64(s) + c611(s) <-> c64(s!1).c611(s!1)   kp411,km411
+
+   c65(s) + c66(s) <-> c65(s!1).c66(s!1)   kp56,km56
+   c65(s) + c67(s) <-> c65(s!1).c67(s!1)   kp57,km57
+   c65(s) + c68(s) <-> c65(s!1).c68(s!1)   kp58,km58
+   c65(s) + c69(s) <-> c65(s!1).c69(s!1)   kp59,km59
+   c65(s) + c610(s) <-> c65(s!1).c610(s!1)   kp510,km510
+   c65(s) + c611(s) <-> c65(s!1).c611(s!1)   kp511,km511
+
+   c66(s) + c67(s) <-> c66(s!1).c67(s!1)   kp67,km67
+   c66(s) + c68(s) <-> c66(s!1).c68(s!1)   kp68,km68
+   c66(s) + c69(s) <-> c66(s!1).c69(s!1)   kp69,km69
+   c66(s) + c610(s) <-> c66(s!1).c610(s!1)   kp610,km610
+   c66(s) + c611(s) <-> c66(s!1).c611(s!1)   kp611,km611
+
+   c67(s) + c68(s) <-> c67(s!1).c68(s!1)   kp78,km78
+   c67(s) + c69(s) <-> c67(s!1).c69(s!1)   kp79,km79
+   c67(s) + c610(s) <-> c67(s!1).c610(s!1)   kp710,km710
+   c67(s) + c611(s) <-> c67(s!1).c611(s!1)   kp711,km711
+
+   c68(s) + c69(s) <-> c68(s!1).c69(s!1)   kp89,km89
+   c68(s) + c610(s) <-> c68(s!1).c610(s!1)   kp810,km810
+   c68(s) + c611(s) <-> c68(s!1).c611(s!1)   kp811,km811
+
+   c69(s) + c610(s) <-> c69(s!1).c610(s!1)   kp910,km910
+   c69(s) + c611(s) <-> c69(s!1).c611(s!1)   kp911,km911
+
+   c610(s) + c611(s) <-> c610(s!1).c611(s!1)   kp1011,km1011
+end reaction rules
+
+ 
+simulate_nf({suffix=>nf,t_end=>10,n_steps=>50,param=>"-v -utl 3",get_final_state=>1});
+
+
+#promoter - enhancer interactions - major part chea-pet, more information 
+#how many interactions can we expect? One site, two sites, …
+#exclusive/inclusive interactions, bias for distances 
+#rule-based initially to exclude scenarios, 
+#internal deadline
